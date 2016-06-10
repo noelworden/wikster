@@ -5,6 +5,7 @@ This is Wikster. This application will allow users to create public and private 
 -Rails Version: 4.2.5
 
 App Objectives: 
+
 1. Allow for user login 
 
 2. Allow for user to create, read, update, and delete public wikis
