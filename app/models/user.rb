@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-         
-  attr_accessor :login
+
+  #attr_accessor :login
 
   validates :username,
   :presence => true,
@@ -27,5 +27,13 @@ class User < ActiveRecord::Base
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_h).first
     end
+  end
+
+  def login=(login)
+    @login = login
+  end
+
+  def login
+    @login || self.username || self.email
   end
 end
