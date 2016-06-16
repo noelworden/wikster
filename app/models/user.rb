@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   #attr_accessor :login
+  has_many :wikis
 
   validates :username,
   :presence => true,
