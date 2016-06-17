@@ -21,12 +21,13 @@ let(:user) {User.create!(username: "noemm", email: "noemm@noel.com", password: "
       expect(assigns(:wikis)).to eq([new_wiki])
     end
   end
-  # describe "GET #show" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+
+  describe "GET #show" do
+    it "returns http success" do
+      get :show, id: new_wiki.id
+      expect(response).to have_http_status(:success)
+    end
+  end
 
   # describe "GET #new" do
   #   it "returns http success" do
