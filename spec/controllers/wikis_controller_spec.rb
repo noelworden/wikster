@@ -29,12 +29,17 @@ let(:user) {User.create!(username: "noemm", email: "noemm@noel.com", password: "
     end
   end
 
-  # describe "GET #new" do
-  #   it "returns http success" do
-  #     get :new
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET #new" do
+    it "returns http success" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+
+    it "increases the number of Wiki by 1" do
+      expect{ post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}.to change(Wiki,:count).by(1)
+      p Wiki.last
+    end
+  end
 
   # describe "GET #edit" do
   #   it "returns http success" do
