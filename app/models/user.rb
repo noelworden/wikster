@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   #attr_accessor :login
   has_many :wikis
 
+  before_save {self.role || :standard}
+
   validates :username,
   :presence => true,
   :uniqueness => {
@@ -14,6 +16,8 @@ class User < ActiveRecord::Base
   }
 
   validate :validate_username
+
+  enum role: [:standard, :premium, :admin]
 
   def validate_username
     if User.where(email: username).exists?
@@ -36,5 +40,17 @@ class User < ActiveRecord::Base
 
   def login
     @login || self.username || self.email
+  end
+
+  def admin?
+    role == 'admin'
+  end
+
+  def standard?
+    role == 'standard'
+  end
+
+  def premium?
+    role == 'premium'
   end
 end
