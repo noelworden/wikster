@@ -71,4 +71,17 @@ let(:user) {User.create!(username: "noemm", email: "noemm@noel.com", password: "
       expect(response).to redirect_to [new_wiki]
     end
   end
+
+  describe "DELETE destroy" do
+    it "deletes the new_wiki" do
+      delete :destroy, id: new_wiki.id
+      count = Wiki.where({id: new_wiki.id}).size
+      expect(count).to eq 0
+    end
+
+    it "redirects to the wiki index" do
+      delete :destroy, id: new_wiki.id
+      expect(response).to redirect_to :wikis
+    end
+  end
 end

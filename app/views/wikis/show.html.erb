@@ -2,3 +2,4 @@
 <p><%= @wiki.body %></p>
 
 <%= link_to "Edit Wiki", edit_wiki_path(@wiki) %>
+<%= link_to "DELETE Wiki", @wiki, method: :delete %>
