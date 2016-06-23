@@ -1,0 +1,5 @@
+<h4> This is where the wikis live</h4>
+
+<% @wikis.each do |wiki| %>
+  <p> <%= link_to "#{wiki.title}", wiki %></p>
+<% end %>

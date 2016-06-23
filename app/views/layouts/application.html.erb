@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Wikster</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
   <div class="navbar">
     <ul class="pull-left">
-      <li><%= link_to "Home", root_path %> </li>
+      <li><%= link_to "Wikster", root_path %> - <%= link_to "Content", wikis_path%></li>
     </ul>
       <ul class="pull-right">
       <% if user_signed_in? %>
@@ -12,13 +18,25 @@
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link' %>
         <% end %>
       </ul>
-  </div>
-  <title>Wikster</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    </div>
+    <div class="container">
+      <% if flash[:notice] %>
+        <div class="allert allert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+        <% elsif flash.now[:alert] %>
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= flash.now[:alert] %>
+          </div>
+        <% elsif flash[:alert] %>
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="allert">&times;</button>
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
+      </div>
 
 <%= yield %>
 
