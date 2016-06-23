@@ -2,9 +2,9 @@
   <%= form_for @wiki do |w| %>
    <%= w.label :title %>
    <%= w.text_field :title, class: 'form-control', placeholder:"Wiki title" %>
- 
+
    <%= w.label :body %>
    <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "What's the Wiki going to say?" %>
- 
+
    <%= w.submit "Save" %>
  <% end %>
