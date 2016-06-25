@@ -6,6 +6,10 @@ module RandomData
     "#{first_name} #{last_name}"
   end
 
+  def self.random_username
+    name = random_word
+  end
+
   def self.random_email
     "#{random_word}@#{random_word}.""com"
   end
@@ -33,5 +37,9 @@ module RandomData
     letters = ('a'..'z').to_a
     letters.shuffle!
     letters[0, rand(3..8)].join
+  end
+
+  def self.random_user
+    rand(10)
   end
 end
