@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   #attr_accessor :login
   has_many :wikis
 
-  before_save {self.role || :standard}
+  before_save {self.role ||= :standard}
 
   validates :username,
   :presence => true,

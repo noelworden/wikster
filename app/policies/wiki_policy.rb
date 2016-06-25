@@ -4,7 +4,12 @@ class WikiPolicy < ApplicationPolicy
     true
   end
 
-  # def create?
+  # def update?
   #   user.admin?
   # end
+
+  # def edit?
+  #   update?
+  # end
+  
 end
