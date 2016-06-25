@@ -21,7 +21,7 @@
     </div>
     <div class="container">
       <% if flash[:notice] %>
-        <div class="allert allert-success">
+        <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <%= flash[:notice] %>
         </div>
@@ -38,7 +38,17 @@
         <% end %>
       </div>
 
+
+
 <%= yield %>
 
 </body>
+
+  <div class="welcome">
+    <% if user_signed_in? %>
+      <strong>Welcome to Wikster, <%= current_user.username %></strong>
+    <% else %>
+      <strong>Welcome to Wikster, mystery user</strong>
+    <% end %>
+  </div>
 </html>
