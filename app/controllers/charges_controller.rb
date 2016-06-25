@@ -13,7 +13,8 @@ class ChargesController < ActionController::Base
       )
 
     flash[:notice] = "Thanks for becoming a premium member"
-    redirect_to user_path(current_user)
+    ##need to update user attribute to premium
+    redirect_to root_url
 
     rescue Stripe::CardError => e
     flash[:alert] = e.message
