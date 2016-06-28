@@ -34,8 +34,7 @@
   </div>
 <% end %>
 
-<%= current_user.role %>
-<% if current_user.role == :standard %>
+<% if current_user.standard? %>
 
   <h4> Upgrade to Premium!</h4>
   <%= button_to "Upgrade!!", charges_path %>
