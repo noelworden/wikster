@@ -11,6 +11,13 @@
         <%= w.label :body %>
         <%= w.text_field :body, class: 'form-control', placeholder: "What will your Wiki be about?" %>
         </div>
+      <% if current_user.premium? || current_user.admin? %>
+      <div class="form-group">
+        <%= w.label :private, class: 'checkbox' do %>
+        Private wiki <%= w.check_box :private %>
+        <% end %>
+      </div>
+  <% end %>
       <div class="form-group">
         <%= w.submit "Save", class: 'btn btn-success' %>
       </div>
