@@ -53,4 +53,9 @@ class User < ActiveRecord::Base
   def premium?
     role == 'premium'
   end
+
+  # def view_all?
+  #   role == 'admin' || 'premium'
+  # end
+
 end
