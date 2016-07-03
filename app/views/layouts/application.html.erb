@@ -46,7 +46,7 @@
 
   <div class="welcome">
     <% if user_signed_in? %>
-      <strong>Welcome to Wikster, <%= current_user.username %>, <%= current_user.role %></strong>
+      <strong>Welcome to Wikster, <%= current_user.username %>, <%= current_user.role %>, <%= current_user.id %></strong>
     <% else %>
       <strong>Welcome to Wikster, mystery user</strong>
     <% end %>

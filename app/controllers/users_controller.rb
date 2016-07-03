@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
   def downgrade
     current_user.update_attribute(:role, 0)
-
     if current_user.save
       flash[:notice] = "Thats a bummer you downgraded"
+      current_user.wikis.update_all(private: false)
       redirect_to root_url
     else
       flash.now[:alert] = "There was an issue dowgrading"

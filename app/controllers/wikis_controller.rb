@@ -1,7 +1,12 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.all
+    if user_signed_in?
+      @wikis = Wiki.private_viewing
+    else
+      @wikis = Wiki.public_viewing
+    end
+    #@wikis = Wiki.visible_to(current_user)
     authorize @wikis
   end
 
@@ -62,6 +67,6 @@ class WikisController < ApplicationController
   private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :body)
+    params.require(:wiki).permit(:title, :body, :private)
   end
 end
