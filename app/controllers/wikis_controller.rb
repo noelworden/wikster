@@ -1,5 +1,10 @@
 class WikisController < ApplicationController
 
+  # def index
+  #   @wikis = Wiki.visible_to(current_user)
+  #   authorize @wikis
+  # end
+  
   def index
     if user_signed_in?
       @wikis = Wiki.private_viewing

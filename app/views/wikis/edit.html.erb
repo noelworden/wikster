@@ -16,11 +16,15 @@
         <%= w.label :private, class: 'checkbox' do %>
         Private wiki <%= w.check_box :private %>
         <% end %>
+
       </div>
   <% end %>
       <div class="form-group">
         <%= w.submit "Save", class: 'btn btn-success' %>
       </div>
+
+      <%= button_to "Add Collaborators", new_wiki_collaborator_path(@wiki) %>
+
       <% end %>
   </div>
 </div>
