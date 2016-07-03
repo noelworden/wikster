@@ -9,7 +9,7 @@
       </div>
       <div class="form-group">
         <%= w.label :body %>
-        <%= w.text_field :body, class: 'form-control', placeholder: "What will your Wiki be about?" %>
+        <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "What's the Wiki going to say?" %>
         </div>
       <% if current_user.premium? || current_user.admin? %>
       <div class="form-group">
