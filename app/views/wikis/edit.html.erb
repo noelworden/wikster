@@ -23,7 +23,11 @@
         <%= w.submit "Save", class: 'btn btn-success' %>
       </div>
 
-      <%= button_to "Add Collaborators", new_wiki_collaborator_path(@wiki) %>
+      <%# button_to "Add Collaborators", new_wiki_collaborator_path(@wiki) %>
+      <%= form_tag [@wiki, Collaborator.new] do %>
+        <%= text_field_tag :email %>
+        <%= submit_tag %>
+      <%= end %>
 
       <% end %>
   </div>
