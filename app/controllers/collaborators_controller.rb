@@ -1,10 +1,8 @@
 class CollaboratorsController < ApplicationController
-  def new
-    @wiki = Wiki.find(params[:id])
-    @collaborators = Collaborators.new
-  end
 
   def create
+    @wiki = Wiki.find(params[:wiki_id])
+    
   ##does user exist user.where(email: )
   ##email doesnt exist with current_user
   ##user already assigned?
