@@ -1,19 +1,13 @@
 class WikisController < ApplicationController
-
+# skip_before_action :authenticate_user!
   # def index
   #   @wikis = Wiki.visible_to(current_user)
   #   authorize @wikis
   # end
   
   def index
-    #@wikis = policy_scope(Wiki)
     @wikis = Wiki.user_viewable(current_user)
-    # if user_signed_in?
-    #   @wikis = Wiki.user_viewable
-    # else
-    #   @wikis = Wiki.public_viewing
-    # end
-    # #@wikis = Wiki.visible_to(current_user)
+    # @wikis = Wiki.all
     # authorize @wikis
   end
 
