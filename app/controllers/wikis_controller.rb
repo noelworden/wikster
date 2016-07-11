@@ -4,6 +4,8 @@ class WikisController < ApplicationController
   #   @wikis = Wiki.visible_to(current_user)
   #   authorize @wikis
   # end
+
+  before_action :set_wiki, only: [:show, :edit, :update, :destroy]
   
   def index
     @wikis = Wiki.user_viewable(current_user)
@@ -12,7 +14,7 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
+    
   end
 
   def new
@@ -34,12 +36,10 @@ class WikisController < ApplicationController
   end
 
   def edit
-    @wiki = Wiki.find(params[:id])
     authorize @wiki
   end
 
   def update
-    @wiki = Wiki.find(params[:id])
     @wiki.assign_attributes(wiki_params)
     authorize @wiki
 
@@ -52,7 +52,6 @@ class WikisController < ApplicationController
     end
   end
   def destroy
-    @wiki = Wiki.find(params[:id])
     authorize @wiki
 
     if @wiki.destroy
@@ -69,5 +68,9 @@ class WikisController < ApplicationController
 
   def wiki_params
     params.require(:wiki).permit(:title, :body, :private)
+  end
+
+  def set_wiki
+    @wiki = Wiki.find(params[:id])
   end
 end

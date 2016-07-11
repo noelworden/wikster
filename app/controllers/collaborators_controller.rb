@@ -1,6 +1,7 @@
 class CollaboratorsController < ApplicationController
 
   def create
+
     @wiki = Wiki.find(params[:wiki_id])
 
     user = User.where(email: params[:email]).first
@@ -17,6 +18,20 @@ class CollaboratorsController < ApplicationController
       else
         flash[:error] = "Something went wrong"
       end
+    end
+
+    redirect_to edit_wiki_path(@wiki)
+  end
+
+  def destroy
+
+    @wiki = Wiki.find(params[:wiki_id])
+    collaborator = Collaborator.find(params[:id])
+
+    if collaborator.destroy
+      flash[:notice] = "Collaborator deleted"
+    else
+      flash[:alert] = "There was a problem deleting the collaborator"
     end
 
     redirect_to edit_wiki_path(@wiki)
