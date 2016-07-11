@@ -10,24 +10,27 @@
       <div class="form-group">
         <%= w.label :body %>
         <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "What's the Wiki going to say?" %>
-        </div>
-      <% if current_user.premium? || current_user.admin? %>
-      <div class="form-group">
-        <%= w.label :private, class: 'checkbox' do %>
-        Private wiki <%= w.check_box :private %>
-        <% end %>
-
       </div>
-  <% end %>
+        <% if current_user.premium? || current_user.admin? %>
+          <div class="form-group">
+            <%# w.label :private, class: 'checkbox'  %>
+            <%= w.check_box :private %> Private wiki
+           
+          <% end %>
+      </div>
       <div class="form-group">
         <%= w.submit "Save", class: 'btn btn-success' %>
       </div>
-
-      <%# button_to "Add Collaborators", new_wiki_collaborator_path(@wiki) %>
-      <%= form_tag [@wiki, Collaborator.new] do %>
+    <% end %>
+      <%= form_tag [@wiki, Collaborator.create] do %>
         <%= text_field_tag :email %>
         <%= submit_tag %>
       <% end %>
-    <% end %>
+      <h4>Collaborators</h4>
+        <% @wiki.collaborators.each do |c| %>
+        <ul>
+          <%= c.user.email %> <%= link_to "Delete", wiki_collaborator_path(@wiki, c), method: :delete %>
+        </ul>
+        <% end %>
   </div>
 </div>
