@@ -268,3 +268,4 @@ Devise.setup do |config|
 
   # For configuration with sendgrid
   config.mailer_sender = ENV["SENDGRID_USERNAME"]
+end
