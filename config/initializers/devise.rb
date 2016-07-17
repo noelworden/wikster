@@ -267,4 +267,8 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   # For configuration with sendgrid
-  config.mailer_sender = ENV["SENDGRID_USERNAME"]
+
+  #This works, testing something else
+  # config.mailer_sender = ENV["SENDGRID_USERNAME"]
+
+  config.mailer_sender = "Wikster Bot"
