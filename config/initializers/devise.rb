@@ -272,4 +272,5 @@ Devise.setup do |config|
   # config.mailer_sender = ENV["SENDGRID_USERNAME"]
 
   config.mailer_sender = "Wikster Bot"
+end
 
