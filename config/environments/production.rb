@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # For emailing with Heroku and Sendgrid
-  config.action_mailer.default_url_options = { :host =&gt; 'wikster.herokuapp.com'}
+  config.action_mailer.default_url_options = { :host => 'wikster.herokuapp.com'}
   ActionMailer::Base.smtp_settings = {
     :address => "smpt.sendgrid.net",
     :user_name => ENV['SENDGRID_USERNAME'],
