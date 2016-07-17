@@ -269,8 +269,8 @@ Devise.setup do |config|
   # For configuration with sendgrid
 
   #This works, testing something else
-  # config.mailer_sender = ENV["SENDGRID_USERNAME"]
+  config.mailer_sender = ENV["SENDGRID_USERNAME"]
 
-  config.mailer_sender = "Wikster Bot"
+  # config.mailer_sender = "Wikster Bot"
 end
 
