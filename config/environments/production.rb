@@ -78,13 +78,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # For emailing with Heroku and Sendgrid
-  config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net'}
+  config.action_mailer.default_url_options = { :host => 'wikster.herokuapp.com'}
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'wikster.heroku.com',
     :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :port => 25,
     :authentication => :plain,
     :enable_starttls_auto => true
 }
