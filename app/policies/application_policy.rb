@@ -51,6 +51,3 @@ class ApplicationPolicy
     end
   end
 end
-
-
-#&& (record.user == user || user.admin?)
