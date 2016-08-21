@@ -1,9 +1,10 @@
 <h4> This is where the wikis live</h4>
-
-<% @wikis.each do |wiki| %>
-  <p> <%= link_to "#{wiki.title}", wiki %></p>
-<% end %>
-
+<br>
 <% if policy(Wiki.new).create? %>
   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+<% end %>
+<br>
+<br>
+<% @wikis.each do |wiki| %>
+  <p> <%= link_to "#{wiki.title}", wiki %></p>
 <% end %>
