@@ -13,11 +13,11 @@ admin = User.create!(
   password: "password",
   )
 
-me = User.create!(
-  username: "nworden",
-  email: "noelworden@gmail.com",
-  password: "password",
-  )
+# me = User.create!(
+#   username: "nworden",
+#   email: "noelworden@gmail.com",
+#   password: "password",
+#   )
 
 member01 = User.create!(
   username: "member01",
