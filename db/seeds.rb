@@ -1,11 +1,11 @@
-  # 3.times do
-  #   User.create!(
-  #     username: Faker::Internet.user_name,
-  #     email: Faker::Internet.email,
-  #     password: Faker::Internet.password(8)
-  #     )
-# end
-# users = User.all
+  3.times do
+    User.create!(
+      username: Faker::Internet.user_name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password(8)
+      )
+end
+users = User.all
 
 admin = User.create!(
   username: "admin",
@@ -36,7 +36,7 @@ me = User.create!(
     title: Faker::Hipster.sentence(5),
     body: Faker::Hipster.paragraph(3),
     private: false,
-    user_id: rand(1..7)
+    user_id: rand(1..5)
     )
 end
 wikis = Wiki.all
