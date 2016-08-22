@@ -1,17 +1,17 @@
-3.times do
-  User.create!(
-    username: Faker::Internet.user_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password(8)
-    )
+  # 3.times do
+  #   User.create!(
+  #     username: Faker::Internet.user_name,
+  #     email: Faker::Internet.email,
+  #     password: Faker::Internet.password(8)
+  #     )
 end
-users = User.all
+# users = User.all
 
-admin = User.create!(
-  username: "admin",
-  email: "admin@wikster.com",
-  password: "password",
-  )
+# admin = User.create!(
+#   username: "admin",
+#   email: "admin@wikster.com",
+#   password: "password",
+#   )
 
 # me = User.create!(
 #   username: "nworden",
@@ -19,17 +19,17 @@ admin = User.create!(
 #   password: "password",
 #   )
 
-member01 = User.create!(
-  username: "member01",
-  email: "member01@wikster.com",
-  password: "password",
-  )
+# member01 = User.create!(
+#   username: "member01",
+#   email: "member01@wikster.com",
+#   password: "password",
+#   )
 
-member02 = User.create!(
-  username: "member02",
-  email: "member02@wikster.com",
-  password: "password",
-  )
+# member02 = User.create!(
+#   username: "member02",
+#   email: "member02@wikster.com",
+#   password: "password",
+#   )
 
 20.times do
   Wiki.create!(
