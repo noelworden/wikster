@@ -7,17 +7,17 @@
 # end
 # users = User.all
 
-# admin = User.create!(
-#   username: "admin",
-#   email: "admin@wikster.com",
-#   password: "password",
-#   )
+admin = User.create!(
+  username: "admin",
+  email: "admin@wikster.com",
+  password: "password",
+  )
 
-# me = User.create!(
-#   username: "nworden",
-#   email: "noelworden@gmail.com",
-#   password: "password",
-#   )
+me = User.create!(
+  username: "nworden",
+  email: "noelworden@gmail.com",
+  password: "password",
+  )
 
 # member01 = User.create!(
 #   username: "member01",
