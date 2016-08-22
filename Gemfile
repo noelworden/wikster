@@ -11,7 +11,7 @@ gem 'stripe'
 gem 'figaro', '1.0'
 gem 'redcarpet'
 gem 'sendgrid'
-
+gem 'faker'
 
 
 gem 'jquery-rails'
@@ -23,7 +23,6 @@ group :development, :test do
   gem 'rspec-rails', '~>3.0'
   gem 'pundit-matchers', '1.1.0'
   gem 'factory_girl_rails', '~>4.0'
-  gem 'faker' #need to be located in different part of file?#
 
 end
 

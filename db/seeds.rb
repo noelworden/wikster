@@ -1,4 +1,4 @@
-5.times do
+3.times do
   User.create!(
     username: Faker::Internet.user_name,
     email: Faker::Internet.email,
@@ -10,6 +10,12 @@ users = User.all
 admin = User.create!(
   username: "admin",
   email: "admin@wikster.com",
+  password: "password",
+  )
+
+me = User.create!(
+  username: "nworden",
+  email: "noelworden@gmail.com",
   password: "password",
   )
 
