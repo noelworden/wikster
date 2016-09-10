@@ -43,12 +43,12 @@
 <% if current_user.standard? %>
 
   <h4> Upgrade to Premium!</h4>
-  <%= button_to "Upgrade!!", charges_path %>
+  <%= button_to "Upgrade!!", charges_path, class: 'btn btn-default'%>
 
 <% else %>
   <h4> Downgrade to Basic... </h4>
 
-<%= button_to "Downgrade", user_downgrade_path(current_user), class: 'btn btn-secondary', data: { confirm: 'Are you sure you want to downgrade? All your private wikis will become public...' } %>
+<%= button_to "Downgrade", user_downgrade_path(current_user), class: 'btn btn-default', data: { confirm: 'Are you sure you want to downgrade? All your private wikis will become public...' } %>
 <% end %>
 
 <br>
