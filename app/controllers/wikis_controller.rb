@@ -1,20 +1,12 @@
 class WikisController < ApplicationController
-# skip_before_action :authenticate_user!
-  # def index
-  #   @wikis = Wiki.visible_to(current_user)
-  #   authorize @wikis
-  # end
 
   before_action :set_wiki, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @wikis = Wiki.user_viewable(current_user)
-    # @wikis = Wiki.all
-    # authorize @wikis
   end
 
   def show
-    
   end
 
   def new

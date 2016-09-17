@@ -2,11 +2,11 @@
 <p><%= markdown(@wiki.body) %></p>
 
 <% if policy(@wiki).edit? %>
-<%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-warning' %>
+  <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-warning' %>
 <% end %>
 
 <% if policy(@wiki).destroy? %>
-<%= link_to "DELETE Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you wanna do this?'} %>
+  <%= link_to "DELETE Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you wanna do this?'} %>
 <% end %>
 <br>
 <br>
