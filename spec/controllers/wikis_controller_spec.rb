@@ -7,15 +7,6 @@ let(:admin) {create(:user, username: "admin", role: 2)}
 let(:new_wiki) {create(:wiki, private: false, user_id: member_user.id)}
 let(:private_wiki) {create(:wiki, private: true, user_id: premium_user.id)}
 
-  # context "guest user" do
-  #   describe "GET #index" do
-  #     it "returns http success" do
-  #       get :index
-  #       expect(response).to have_http_status(:success)
-  #     end
-  #   end
-  # end
-
   context "signed-in member user" do
 
     before do
@@ -26,17 +17,7 @@ let(:private_wiki) {create(:wiki, private: true, user_id: premium_user.id)}
       it "returns http success" do
         get :index
         expect(response).to have_http_status(:success)
-
-        # p member_user
-        # p premium_user
-        # p new_wiki
-        # p private_wiki
       end
-
-    #   it "assigns new_wiki to @wikis" do ###wrong###
-    #     get :index
-    #     expect(assigns(:wikis)).to eq([new_wiki])
-    #   end
     end
 
     describe "GET #show" do
@@ -113,11 +94,6 @@ let(:private_wiki) {create(:wiki, private: true, user_id: premium_user.id)}
         get :index
         expect(response).to have_http_status(:success)
       end
-
-      # it "assigns private_wiki to @wikis" do ### wrong ###
-      #   get :index
-      #   expect(assigns(:wikis)).to eq([private_wiki])
-      # end
     end
 
     describe "GET #show" do
@@ -213,7 +189,6 @@ let(:private_wiki) {create(:wiki, private: true, user_id: premium_user.id)}
         expect{ post :create, wiki: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}.to change(Wiki,:count).by(1)
       end
     end
-    
     describe "GET #edit" do
       it "returns http success" do
         get :edit, id: new_wiki.id

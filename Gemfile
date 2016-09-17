@@ -12,8 +12,6 @@ gem 'figaro', '1.0'
 gem 'redcarpet'
 gem 'sendgrid'
 gem 'faker'
-
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -38,4 +36,3 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-

@@ -4,11 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-
-## has many collaborators and through collaborators is causing the wiki to save without any user_id association
-  #has_many :collaborators
   has_many :wikis
-  #, through: :collaborators
 
   before_save {self.role ||= :standard}
 

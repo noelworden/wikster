@@ -37,7 +37,3 @@ class CollaboratorsController < ApplicationController
     redirect_to edit_wiki_path(@wiki)
   end
 end
-
-
-### colab.user with link_to to the side on the view set method: :delete
-### setup destroy method
